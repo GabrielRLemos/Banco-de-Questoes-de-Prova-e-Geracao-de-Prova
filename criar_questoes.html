@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,18 +16,17 @@
             <div class="card-body">
                 <form action="enviar_questao.php" method="post">
                     <div class="mb-3">
-                        <label for="questao" class="form-label">Questão:</label>
-                        <textarea name="questao" id="questao" class="form-control" rows="5" required></textarea>
+                        <label for="pergunta" class="form-label">Pergunta:</label>
+                        <textarea name="pergunta" id="pergunta" class="form-control" rows="5" required></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="materia" class="form-label">Matéria:</label>
-                        <select name="materia" id="materia" class="form-select" required>
-                            <option value="" disabled selected>Selecione a matéria</option>
+                        <label for="disciplinas" class="form-label">Disciplinas:</label>
+                        <select name="disciplina" id="disciplina" class="form-select" required>
+                            <option value="" disabled selected>Selecione a disciplina</option>
                             <option value="1">Matemática</option>
                             <option value="2">Português</option>
-                            <option value="3">Quimica</option>
-                           
+                            <option value="3">Química</option>
                         </select>
                     </div>
 
@@ -36,6 +37,9 @@
 
                     <button type="submit" class="btn btn-success">Enviar Questão</button>
                 </form>
+
+                <!-- Mostrar mensagem -->
+                <?php if (!empty($mensagem)) echo $mensagem; ?>
             </div>
         </div>
     </div>
