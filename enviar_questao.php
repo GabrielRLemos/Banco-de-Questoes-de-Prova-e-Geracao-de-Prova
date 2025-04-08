@@ -1,50 +1,41 @@
 <?php
-// Dados de conexão
-$servername = "localhost";
-$username = "root";
-$password = ""; // ou sua senha
-$dbname = "QuestoesDB";
+// Mostrar todos os erros do PHP
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Mensagem padrão
+$mensagem = "";
 
-// Verificar conexão
-if ($conn->connect_error) {
-    die("<div style='padding:20px; font-family:sans-serif; color:red;'>Conexão falhou: " . $conn->connect_error . "</div>");
-}
+// Processar o envio do formulário
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Conexão com o banco
+    $conn = new mysqli("localhost", "root", "", "bancodequestoes");
 
-// Verificar se os dados foram enviados corretamente
-if (isset($_POST['questao'], $_POST['materia'], $_POST['assunto'])) {
-    // Receber dados do formulário
-    $questao = $_POST['questao'];
-    $materia = $_POST['materia'];
-    $assunto = $_POST['assunto'];
-
-    // Preparar e executar inserção
-    $sql = "INSERT INTO Questoes (questao, materia, assunto) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-
-    if ($stmt === false) {
-        die("<div style='padding:20px; font-family:sans-serif; color:red;'>Erro na preparação da query: " . $conn->error . "</div>");
-    }
-
-    $stmt->bind_param("sss", $questao, $materia, $assunto);
-
-    if ($stmt->execute()) {
-        echo "<div style='padding:20px; font-family:sans-serif; color:green;'>
-                <h2>Questão enviada com sucesso!</h2>
-                <a href='formulario.html'>Voltar ao formulário</a>
-              </div>";
+    if ($conn->connect_error) {
+        $mensagem = "<div class='alert alert-danger'>Erro de conexão: " . $conn->connect_error . "</div>";
     } else {
-        echo "<div style='padding:20px; font-family:sans-serif; color:red;'>
-                Erro ao enviar questão: " . $stmt->error . "
-              </div>";
+        // Dados do formulário
+        $pergunta = $_POST['pergunta'];
+        $disciplina = $_POST['disciplina'];
+        $assunto = $_POST['assunto'];
+
+        // Inserção no banco
+        $sql = "INSERT INTO questoes (pergunta, id_disciplina, nome_assunto) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt) {
+            $stmt->bind_param("sii", $pergunta, $disciplina, $assunto);
+            if ($stmt->execute()) {
+                $mensagem = "<div class='alert alert-success mt-3'>Questão enviada com sucesso!</div>";
+            } else {
+                $mensagem = "<div class='alert alert-danger mt-3'>Erro ao enviar questão: " . $stmt->error . "</div>";
+            }
+            $stmt->close();
+        } else {
+            $mensagem = "<div class='alert alert-danger mt-3'>Erro na preparação da consulta: " . $conn->error . "</div>";
+        }
+
+        $conn->close();
     }
-
-    $stmt->close();
-} else {
-    echo "<div style='padding:20px; font-family:sans-serif; color:red;'>Todos os campos são obrigatórios.</div>";
 }
-
-$conn->close();
 ?>
