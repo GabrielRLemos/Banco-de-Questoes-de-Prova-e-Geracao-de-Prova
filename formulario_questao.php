@@ -21,20 +21,16 @@
                     <div class="mb-3">
                         <label class="form-label">Disciplinas:</label>
                         <select name="disciplina" class="form-select" required>
-                            <option value="1">Matemática</option>
-                            <option value="2">Português</option>
-                            <option value="3">Química</option>
+                            <option value="" selected disabled>Selecione uma disciplina</option>
+                            <?php
+                            include('connection.php');
+                            $disciplinas = mysqli_query($conn, "SELECT * FROM disciplinas");
+                            while($d = mysqli_fetch_assoc($disciplinas)){
+                                echo '<option value="'.$d['id_disciplina'].'">'.$d['nome'].'</option>';
+                            }
+                            ?>
                         </select>
                     </div>
-                    <input type="hidden" name="pergunta" value="<?= htmlspecialchars($_POST['pergunta']) ?>">
-                    <input type="hidden" name="disciplina" value="<?= $_POST['disciplina'] ?>">
-
-                    <div class="mb-3">
-                        <label class="form-label">Assuntos:</label>
-                        <select name="assunto" class="form-select" required>
-                        </select>
-                    </div>
-
                     <button type="submit" class="btn btn-primary">Carregar Assuntos</button>
                 </form>
             </div>
