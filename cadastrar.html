@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container mt-4">
-        <form action="login.php" method="post">
-            <legend>Cadastrar Funcionário</legend>
+        <form action="Actions/cadastrar.php" method="post">
+            <legend>Cadastrar Professor</legend>
             <div class="mb-3">
                 <label for="nome_professor" class="form-label">Nome do Professor:</label>
                 <input type="text" class="form-control" name="nome_professor" placeholder="Digite o seu nome....." required>
@@ -18,7 +18,7 @@
 
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha:</label>
-                <input type="text" class="form-control" name="senha" placeholder="Digite sua senha....." required>
+                <input type="password" class="form-control" name="senha" placeholder="Digite sua senha....." required>
             </div>
             
             <div class="mb-3">
@@ -30,7 +30,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
         <br>
         <!--AINDA NAO ESTA PRONTO-->
