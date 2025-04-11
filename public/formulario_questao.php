@@ -39,6 +39,11 @@ require __DIR__ . '/../includes/connection.php';
                 </form>
             </div>
         </div>
+
+        <!-- Botão alinhado à esquerda -->
+        <div class="text-start mt-3">
+            <a href="consultar_questoes.php" class="btn btn-secondary">Consultar Questões</a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
