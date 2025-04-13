@@ -24,7 +24,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "<script>alert('Login realizado com sucesso!'); window.location.href='formulario_questao.php';</script>";
+    echo "<script>alert('Login realizado com sucesso!'); window.location.href='hub.html';</script>";
 } else {
     echo "<script>alert('Nome ou senha incorreto, Digite novamente!!.'); window.history.back();</script>";
 }
