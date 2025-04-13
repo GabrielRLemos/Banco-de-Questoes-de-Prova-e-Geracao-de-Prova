@@ -109,6 +109,9 @@ $result = getProfessoresFiltrados($conn, $filtro_disciplina);
             <a href="cadastrar.html" class="btn btn-warning">
                 <i class="bi bi-arrow-left"></i> Voltar ao Cadastro
             </a>
+            <a href="hub.html" class="btn btn-warning">
+                <i class="bi bi-arrow-left"></i> Voltar ao hub 
+            </a>
         </div>
     </div>
     <!-- Bootstrap Icons -->
