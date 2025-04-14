@@ -39,7 +39,7 @@ $result = getProfessoresFiltrados($conn, $filtro_disciplina);
 <form method="post" class="row g-3 mb-4 align-items-center">
     <div class="col-md-5">
         <select class="form-select" name="filtro_disciplina">
-            <option value="">Selecione uma disciplina</option>
+            <option value="">Todos os Professores</option>
             <?php foreach ($disciplinas as $disciplina) { ?>
                 <option value="<?= $disciplina['id_disciplina'] ?>" <?= ($disciplina['id_disciplina'] == $filtro_disciplina) ? "selected" : "" ?>>
                     <?= $disciplina['nome'] ?>
