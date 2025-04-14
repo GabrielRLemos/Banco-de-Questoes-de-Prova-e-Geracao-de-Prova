@@ -36,17 +36,16 @@ require __DIR__ . '/../includes/connection.php';
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Carregar Assuntos</button>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
-                    <a href="hub.html" class="btn btn-warning">
-                        <i class="bi bi-arrow-left"></i> Voltar ao hub 
-                    </a>
-                    </div>
                 </form>
             </div>
         </div>
+
+        <!-- Botão alinhado à esquerda -->
+        <div class="text-start mt-3">
+            <a href="consultar_questoes.php" class="btn btn-secondary">Consultar Questões</a>
+        </div>
     </div>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
