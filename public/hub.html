@@ -1,3 +1,17 @@
+<?php
+// Inicia a sessão
+
+session_start();
+
+if (!isset($_SESSION['id_professor'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$nome_professor = htmlspecialchars($_SESSION['nome_professor']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,9 +23,18 @@
 </head>
 <body class="text-white d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url(../assets/background.jpg); background-size: cover; background-position: center;">
 
+  <!-- Botão Deslogar flutuante -->
+  <div class="position-absolute top-0 end-0 m-4">
+    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
+  </div>
+
   <div class="container text-center">
     <div class="card bg-light text-dark shadow-lg p-5 rounded-4 mx-auto" style="width: 100%;">
-      <h1 class="display-4 fw-bold">Bem-vindo ao hub, Professor!</h1>
+      
+      <!-- Título com nome do professor vindo da sessão -->
+     <h1 class="display-4 fw-bold">Bem-vindo ao hub, Professor <?php echo htmlspecialchars($_SESSION['nome_professor']); ?>!</h1>
+
+      
       <p class="lead mt-3">É um prazer ter você aqui. Sinta-se à vontade para explorar.</p>
       
       <div class="row mt-4 g-3">
@@ -26,6 +49,9 @@
         </div>
         <div class="col-md-3 col-6">
           <a href="consultar_questoes.php"><button class="btn btn-primary btn-lg w-100">Consultar Questões</button></a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="logout.php"><button class="btn btn-danger btn-lg w-100">Deslogar</button></a>
         </div>
       </div>
 
