@@ -23,15 +23,10 @@ $nome_professor = htmlspecialchars($_SESSION['nome_professor']);
 </head>
 <body class="text-white d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url(../assets/background.jpg); background-size: cover; background-position: center;">
 
-  <!-- Botão Deslogar flutuante -->
-  <div class="position-absolute top-0 end-0 m-4">
-    <a href="logout.php" class="btn btn-danger btn-sm">Sair</a>
-  </div>
 
   <div class="container text-center">
     <div class="card bg-light text-dark shadow-lg p-5 rounded-4 mx-auto" style="width: 100%;">
-      
-      <!-- Título com nome do professor vindo da sessão -->
+
      <h1 class="display-4 fw-bold">Bem-vindo ao hub, Professor <?php echo htmlspecialchars($_SESSION['nome_professor']); ?>!</h1>
 
       
@@ -51,14 +46,13 @@ $nome_professor = htmlspecialchars($_SESSION['nome_professor']);
           <a href="consultar_questoes.php"><button class="btn btn-primary btn-lg w-100">Consultar Questões</button></a>
         </div>
         <div class="col-md-3 col-6">
-          <a href="logout.php"><button class="btn btn-danger btn-lg w-100">Deslogar</button></a>
+          <a href="logout.php"><button class="btn btn-danger btn-lg w-100">Sair</button></a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
