@@ -42,13 +42,5 @@ git clone https://github.com/GabrielRLemos/Banco-de-Questoes-de-Prova-e-Geracao-
 
 🔧 Em desenvolvimento — funcionalidades principais ainda estão sendo construídas.
 
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues* ou *pull requests* com melhorias ou correções.
-
-## 📄 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).
-
 ---
 
