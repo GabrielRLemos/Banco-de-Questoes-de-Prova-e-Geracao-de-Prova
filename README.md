@@ -20,7 +20,13 @@ Este projeto tem como objetivo o desenvolvimento de uma plataforma para cadastro
 - XAMPP (para ambiente de desenvolvimento local)
 
 ## 📁 Estrutura do Projeto
-/ ├── index.html # Página inicial / cadastro de questões ├── gerar_prova.php # Script para geração de provas ├── banco_de_dados.sql # Script de criação do banco de dados (em breve) ├── css/ # Estilos da aplicação ├── js/ # Scripts JavaScript (futuros) └── ...
+/ 
+├── index.html # Página inicial / cadastro de questões 
+├── gerar_prova.php # Script para geração de provas
+├── banco_de_dados.sql # Script de criação do banco de dados (em breve) 
+├── css/ # Estilos da aplicação 
+├── js/ # Scripts JavaScript (futuros) 
+└── ...
 
 ## 📌 Como Executar o Projeto
 
