@@ -35,7 +35,7 @@ git clone https://github.com/GabrielRLemos/Banco-de-Questoes-de-Prova-e-Geracao-
 
 2. Instale o [XAMPP](https://www.apachefriends.org/pt_br/index.html) e mova os arquivos para a pasta `htdocs`.
 3. Inicie o Apache e o MySQL pelo painel do XAMPP.
-4. Importe o banco de dados (em breve será fornecido um arquivo `.sql`).
+4. Importe o banco de dados
 5. Acesse `http://localhost/nome-da-pasta` no navegador.
 
 ## 📌 Status do Projeto
