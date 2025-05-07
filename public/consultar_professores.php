@@ -46,7 +46,7 @@ $result = getProfessoresFiltrados($conn, $filtro_disciplina);
         <?php endif; ?>
     <div class="card shadow">
         <div class="card-header bg-info text-white">
-            <h1 class="mb-0">Consultar Questões</h1>
+            <h1 class="mb-0">Consultar Professores</h1>
         </div>
     <div class="card-body">
 
